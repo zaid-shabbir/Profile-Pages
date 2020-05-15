@@ -81,7 +81,7 @@ import VueDropify from "vue-dropify";
 // import axios from "axios";
 
 export default {
-  name: "Userinfo",
+  name: "UserInfo",
   data() {
     return {
       username: "User Name",

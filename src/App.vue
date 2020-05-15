@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12 col-lg-3">
           <h2 class="profile">Profile</h2>
-          <Userinfo />
+          <UserInfo />
         </div>
         <div class="col-12 col-lg-9">
           <div id="nav">
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import Userinfo from "@/components/Userinfo.vue";
+import UserInfo from "@/components/UserInfo.vue";
 
 export default {
   name: "Account",
   components: {
-    Userinfo
+    UserInfo
   }
 };
 </script>

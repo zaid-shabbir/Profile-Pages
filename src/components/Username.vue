@@ -4,7 +4,7 @@
     <label for="username">Change your username</label>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
-    <input v-model="user_name" type="text" />
+    <input id="username" v-model="user_name" type="text" />
     <i @click="validate" class="fas fa-thumbs-up icon"></i>
   </div>
 </template>

@@ -1,28 +1,40 @@
 <template>
   <div class="container-fluid">
-    <h5>Modification password</h5>
+    <h5>Disable Account</h5>
+    <div class="title">What is Lorem ipsum?</div>
+    <ul class="list">
+      <li>Lorem ipsum is simply dummy text of the printing and</li>
+      <li>Lorem ipsum is simply dummy text of the printing and</li>
+      <li>Lorem ipsum is simply dummy text of the printing and</li>
+    </ul>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
-    <input id="current_password" v-model="current_password" type="text" />
-    <label for="new_password">New password</label>
-    <input id="new_password" v-model="new_password" type="text" />
-    <label for="repeat_new_password">Repeat new password</label>
-    <input id="repeat_new_password" v-model="repeat_new_password" type="text" />
-    <button @click="validate" class="btn btn-dark btn-block change-btn">
-      Change the password
+    <input v-model="current_password" id="current_password" type="text" />
+    <label for="reason">Give a reason</label>
+    <input v-model="reason" id="reason" type="text" />
+    <label for="more">More explain</label>
+    <textarea
+      v-model="more"
+      name="more"
+      id="more"
+      cols="30"
+      rows="2"
+    ></textarea>
+    <button @click="validate" class="btn btn-danger disable-btn">
+      Disable Account
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Password",
+  name: "DisableAccount",
   data() {
     return {
       current_password: "",
-      new_password: "",
-      repeat_new_password: "",
+      reason: "",
+      more: "",
       success: "",
       error: ""
     };
@@ -30,18 +42,15 @@ export default {
   methods: {
     validate() {
       this.error = "";
-      if (
-        this.current_password.length < 5 ||
-        this.new_password !== this.repeat_new_password
-      ) {
+      if (this.current_password.length < 5) {
         this.error = "The Password was not valid !";
       } else {
-        this.success = "The Password was updated !";
+        this.success = "Account was disabled successfully !";
       }
       setTimeout(() => {
         this.current_password = "";
-        this.new_password = "";
-        this.repeat_new_password = "";
+        this.reason = "";
+        this.more = "";
         this.success = "";
       }, 1000);
     }
@@ -73,7 +82,14 @@ label {
   font-weight: 500;
   font-size: 13px;
 }
-input[type="text"] {
+.title {
+  font-size: 18px;
+}
+.list {
+  margin-top: 10px;
+}
+input[type="text"],
+#more {
   width: 95%;
   padding: 8px;
   border-radius: 5px;
@@ -81,10 +97,9 @@ input[type="text"] {
   border: lightgray 1px solid;
   outline: none;
 }
-.change-btn {
-  width: 95%;
+.disable-btn {
   margin-top: 20px;
-  padding: 10px 0px;
+  padding: 8px 14px;
   font-size: 15px;
   border-radius: 5px;
   cursor: pointer;
