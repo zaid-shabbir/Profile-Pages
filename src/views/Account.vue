@@ -1,8 +1,8 @@
 <template>
   <div>
     <Username />
-    <Email class="mt-5" />
-    <Password class="mt-5" />
+    <Email />
+    <Password />
   </div>
 </template>
 

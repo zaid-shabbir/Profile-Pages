@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mb-5">
     <h5>Disable Account</h5>
     <div class="title">What is Lorem ipsum?</div>
     <ul class="list">

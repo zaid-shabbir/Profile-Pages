@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mb-5">
     <h5>Your username</h5>
     <label for="username">Change your username</label>
     <div v-if="error" class="error">{{ error }}</div>
@@ -85,7 +85,7 @@ input[type="text"] {
 .icon {
   margin-left: 10px;
   font-size: 15px;
-  height: 30px;
+  height: 28px;
   width: 25px;
   padding-top: 6px;
   padding-left: 4px;
