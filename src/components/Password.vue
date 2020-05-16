@@ -16,6 +16,8 @@
 </template>
 
 <script>
+// import axios from "axios";
+
 export default {
   name: "Password",
   data() {
@@ -30,6 +32,21 @@ export default {
   methods: {
     validate() {
       this.error = "";
+      // var password = {};
+      // password.current_password = this.current_password;
+      // password.new_password = this.new_password;
+      // password.repeat_new_password = this.repeat_new_password;
+      // axios({
+      //   method: "put",
+      //   url: "/url",
+      //   data: password
+      // })
+      //   .then(() => {
+      //     this.success = "The password was updated !";
+      //   })
+      //   .catch((this.error = "The password was not updated !"));
+
+      // mocked function starts
       if (
         this.current_password.length < 5 ||
         this.new_password !== this.repeat_new_password
@@ -44,6 +61,7 @@ export default {
         this.repeat_new_password = "";
         this.success = "";
       }, 1000);
+      // mocked function ends
     }
   }
 };

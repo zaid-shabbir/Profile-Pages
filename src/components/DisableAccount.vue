@@ -28,6 +28,8 @@
 </template>
 
 <script>
+// import axios from "axios";
+
 export default {
   name: "DisableAccount",
   data() {
@@ -42,8 +44,23 @@ export default {
   methods: {
     validate() {
       this.error = "";
+      // var details = {};
+      // details.current_password = this.current_password;
+      // details.reason = this.reason;
+      // details.more = this.more;
+      // axios({
+      //   method: "put",
+      //   url: "/url",
+      //   data: details
+      // })
+      //   .then(() => {
+      //     this.success = "The password was updated !";
+      //   })
+      //   .catch((this.error = "The password was not updated !"));
+
+      // mocked function starts
       if (this.current_password.length < 5) {
-        this.error = "The Password was not valid !";
+        this.error = "Account was not disabled !";
       } else {
         this.success = "Account was disabled successfully !";
       }
@@ -53,6 +70,7 @@ export default {
         this.more = "";
         this.success = "";
       }, 1000);
+      // mocked function ends
     }
   }
 };

@@ -10,6 +10,8 @@
 </template>
 
 <script>
+// import axios from "axios";
+
 export default {
   name: "Email",
   data() {
@@ -22,6 +24,17 @@ export default {
   methods: {
     validate() {
       this.error = "";
+      // axios({
+      //   method: "put",
+      //   url: "/url",
+      //   data: this.email
+      // })
+      //   .then(() => {
+      //     this.success = "The email was updated !";
+      //   })
+      //   .catch((this.error = "The email was not updated !"));
+
+      // mocked function starts
       if (this.email.length < 5) {
         this.error = "The Email was not valid !";
       } else {
@@ -31,6 +44,7 @@ export default {
         this.email = "";
         this.success = "";
       }, 1000);
+      // mocked function ends
     }
   }
 };

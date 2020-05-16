@@ -10,6 +10,8 @@
 </template>
 
 <script>
+// import axios from "axios";
+
 export default {
   name: "Username",
   data() {
@@ -22,6 +24,17 @@ export default {
   methods: {
     validate() {
       this.error = "";
+      // axios({
+      //   method: "put",
+      //   url: "/url",
+      //   data: this.username
+      // })
+      //   .then(() => {
+      //     this.success = "The username was updated !";
+      //   })
+      //   .catch((this.error = "The username was not updated !"));
+
+      // mocked function starts
       if (this.user_name.length < 4) {
         this.error = "The username " + this.user_name + " was not available !";
       } else {
@@ -31,6 +44,7 @@ export default {
         this.user_name = "";
         this.success = "";
       }, 1000);
+      // mocked function ends
     }
   }
 };
