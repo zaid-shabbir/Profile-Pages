@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-lg-3">
+    <div class="containerr">
+      <div class="roww">
+        <div class="col b">
           <h2 class="profile">Profile</h2>
           <UserInfo />
         </div>
-        <div class="col-12 col-lg-9">
+        <div class="col c">
           <div id="nav">
             <router-link to="/">Account</router-link>
             <router-link to="/personalize">Personalize</router-link>
@@ -34,6 +34,19 @@ export default {
 
 <style src="@fortawesome/fontawesome-free/css/all.css"></style>
 <style>
+.containerr {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.roww {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -66,5 +79,23 @@ export default {
   font-weight: bold;
   border-bottom: 3px solid rgb(61, 66, 78);
   padding: 8px 15px;
+}
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 900px) {
+  .b {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .c {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
 }
 </style>
