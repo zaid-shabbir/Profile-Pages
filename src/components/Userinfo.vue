@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid mb-2">
+  <div class="containerr">
     <div class="user-info-container">
-      <div class="row mt-3">
-        <div class="col-6 col-lg-12 text-center">
+      <div class="roww margin">
+        <div class="coll responsive center">
           <div
             @click="show_modal"
             @mouseenter="hovered"
@@ -25,13 +25,13 @@
               />
             </div>
             <div v-if="error" class="error">{error}</div>
-            <button @click="uploadImage" class="btn btn-dark upload-btn">
+            <button @click="uploadImage" class="upload-btn">
               <i v-if="uploading" class="fas fa-spinner fa-spin"></i>
               Upload
             </button>
           </div>
         </div>
-        <div class="col-6 col-lg-12 d-flex justify-content-center">
+        <div class="coll responsive user-name-container">
           <p class="user">
             User:
           </p>
@@ -41,33 +41,33 @@
         </div>
       </div>
       <hr />
-      <div class="row">
-        <div class="col-4 col-lg-12 user-info-footer">
-          <p class="mt-2">
+      <div class="roww">
+        <div class="coll responsive user-info-footer">
+          <p class="margin">
             <i class="fas fa-user info-icon"></i>
           </p>
-          <p class="info mt-2">
+          <p class="info">
             Member Since
-            <span class="d-block text-right">{{ user_date_member }}</span>
+            <span class="info-detail">{{ user_date_member }}</span>
           </p>
         </div>
-        <div class="col-4 col-lg-12 user-info-footer">
-          <p class="mt-2">
+        <div class="coll responsive user-info-footer">
+          <p class="margin">
             <i class="fas fa-globe info-icon"></i>
           </p>
-          <p class="info mt-2">
+          <p class="info">
             Language
-            <span class="d-block text-right">{{ user_lang }}</span>
+            <span class="info-detail">{{ user_lang }}</span>
           </p>
         </div>
-        <div class="col-4 col-lg-12 user-info-footer">
-          <p class="mt-2">
+        <div class="coll responsive user-info-footer">
+          <p class="margin">
             <i class="fas fa-hand-holding-heart info-icon"></i>
           </p>
-          <p class="info mt-2">
+          <p class="info">
             Helper
-            <span v-if="user_helper" class="d-block text-right">Yes</span>
-            <span v-if="!user_helper" class="d-block text-right">No</span>
+            <span v-if="user_helper" class="info-detail">Yes</span>
+            <span v-if="!user_helper" class="info-detail">No</span>
           </p>
         </div>
       </div>
@@ -150,13 +150,49 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
+.containerr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding-bottom: 20px;
   border-radius: 5px;
+  margin-bottom: 0.5rem !important;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .user-info-container {
   padding: 10px;
+}
+.roww {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.coll {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.center {
+  text-align: center !important;
+}
+.user-name-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+.margin {
+  margin-top: 0.8rem !important;
+}
+@media (min-width: 900px) {
+  .responsive {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 .avatar {
   height: 150px;
@@ -187,6 +223,11 @@ export default {
   color: rgb(61, 66, 78);
   font-size: 15px;
   font-weight: lighter;
+  margin-top: 0.5rem !important;
+}
+.info-detail {
+  display: block;
+  text-align: right;
 }
 .upload {
   margin-left: -90px;
@@ -215,5 +256,30 @@ export default {
 }
 .upload-btn {
   margin-top: 5px;
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+.upload-btn:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
 }
 </style>

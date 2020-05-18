@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid mb-5">
+  <div class="containerr">
     <h5>Edit Email</h5>
     <label for="email">Edit Your Email</label>
     <div v-if="error" class="error">{{ error }}</div>
@@ -51,10 +51,14 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
+.containerr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3rem !important;
 }
 h5 {
   font-weight: bold;

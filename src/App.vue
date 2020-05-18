@@ -2,11 +2,11 @@
   <div id="app">
     <div class="containerr">
       <div class="roww">
-        <div class="col b">
-          <h2 class="profile">Profile</h2>
+        <div class="colla b">
+          <div class="profile">Profile</div>
           <UserInfo />
         </div>
-        <div class="col c">
+        <div class="collb c">
           <div id="nav">
             <router-link to="/">Account</router-link>
             <router-link to="/personalize">Personalize</router-link>
@@ -43,7 +43,7 @@ export default {
 }
 .roww {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -56,7 +56,7 @@ export default {
 }
 .profile {
   color: rgb(61, 66, 78);
-  padding: 15px;
+  padding: 25px 0px 25px 0px;
   font-size: 30px;
   font-weight: 700;
   height: 80px;
@@ -80,14 +80,14 @@ export default {
   border-bottom: 3px solid rgb(61, 66, 78);
   padding: 8px 15px;
 }
-.col {
+.coll {
   position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
 @media (min-width: 900px) {
-  .b {
+  .colla {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
