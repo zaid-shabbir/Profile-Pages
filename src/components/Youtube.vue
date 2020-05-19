@@ -1,9 +1,12 @@
 <template>
-  <div class="container-fluid mb-5">
-    <h5>External Application</h5>
+  <div class="container">
+    <h2>External Application</h2>
     <hr />
-    <i class="fab fa-youtube youtube-icon"></i>
-    <span>Youtube</span>
+    <div class="youtube-container">
+      <i class="fab fa-youtube youtube-icon"></i>
+      <span>Youtube</span>
+    </div>
+
     <div class="text">
       <span>Synchronize your Youtube Account</span>
       <i @click="thumb" class="fas fa-thumbs-up thumb-icon"></i>
@@ -58,18 +61,22 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
+.container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;
   padding-bottom: 20px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3rem !important;
 }
-h5 {
+h2 {
   font-weight: bold;
   margin-bottom: 30px;
   position: relative;
 }
-h5:after {
+h2:after {
   content: "";
   width: 40px;
   border-bottom: 2px solid rgb(61, 66, 78);
@@ -84,6 +91,10 @@ h5:after {
 .youtube-icon {
   color: gray;
   margin-right: 2px;
+}
+.youtube-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .thumb-icon {
   margin-left: 10px;
@@ -110,10 +121,26 @@ h5:after {
   color: green;
 }
 .start-btn {
+  display: block;
+  width: 100%;
   margin-top: 30px;
   padding: 0px 0px;
   border-radius: 25px;
   cursor: pointer;
   outline: none;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: 400;
+  text-align: center;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  margin-bottom: 15px;
+}
+.start-btn:hover {
+  background-color: #249c14;
+  border-color: #6adb5b;
 }
 </style>

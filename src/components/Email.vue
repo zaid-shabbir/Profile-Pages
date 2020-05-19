@@ -1,5 +1,5 @@
 <template>
-  <div class="containerr">
+  <div class="container">
     <h2>Edit Email</h2>
     <label for="email">Edit Your Email</label>
     <div v-if="error" class="error">{{ error }}</div>
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style scoped>
-.containerr {
+.container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;

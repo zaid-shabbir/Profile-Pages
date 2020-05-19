@@ -1,5 +1,5 @@
 <template>
-  <div class="containerr">
+  <div class="container">
     <h2>Modification password</h2>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style scoped>
-.containerr {
+.container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;
@@ -122,7 +122,6 @@ input[type="text"] {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;

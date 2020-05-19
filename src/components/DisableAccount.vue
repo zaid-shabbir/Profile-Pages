@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid mb-5">
+  <div class="container">
     <h2>Disable Account</h2>
     <div class="title">What is Lorem ipsum?</div>
     <ul class="list">
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
+.container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;
