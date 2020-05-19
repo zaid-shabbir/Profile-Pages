@@ -8,7 +8,13 @@
             @mouseenter="hovered"
             @mouseleave="exitHovered"
           >
-            <img src="../assets/img.png" alt="avatar" class="avatar" />
+            <img
+              v-if="!image[0]"
+              src="../assets/img.png"
+              alt="avatar"
+              class="avatar"
+            />
+            <img v-else :src="image[0]" alt="avatar" class="avatar" />
             <i v-if="hover" class="fas fa-file-upload upload"></i>
           </div>
           <div v-show="image_modal">
@@ -24,7 +30,7 @@
                 accept="image/jpg,image/jpeg,image/png"
               />
             </div>
-            <div v-if="error" class="error">{error}</div>
+            <div v-if="error" class="error">{{ error }}</div>
             <button @click="uploadImage" class="upload-btn">
               <i v-if="uploading" class="fas fa-spinner fa-spin"></i>
               Upload
@@ -116,7 +122,11 @@ export default {
         this.error = "";
       } else {
         if (this.image.length == 0) {
-          this.image = e[0];
+          const reader = new FileReader();
+          reader.onload = () => {
+            this.image.push(reader.result);
+          };
+          reader.readAsDataURL(e[0]);
         } else {
           this.error = "You cannot upload multiple images!!";
         }
@@ -243,7 +253,7 @@ export default {
   height: 120px;
 }
 .error {
-  margin-left: -180px;
+  /* margin-left: -30px; */
   font-size: 14px;
   color: red;
 }
