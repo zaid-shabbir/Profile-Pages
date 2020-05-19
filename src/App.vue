@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <div class="containerr">
-      <div class="roww">
-        <div class="coll b">
+    <div class="container">
+      <div class="row">
+        <div class="col profile-section">
           <div class="profile">Profile</div>
           <UserInfo />
         </div>
-        <div class="coll c">
+        <div class="col content-section">
           <div id="nav">
             <router-link to="/">Account</router-link>
             <router-link to="/personalize">Personalize</router-link>
@@ -34,16 +34,16 @@ export default {
 
 <style src="@fortawesome/fontawesome-free/css/all.css"></style>
 <style>
-.containerr {
+.container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
-.roww {
+.row {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -80,19 +80,19 @@ export default {
   border-bottom: 3px solid rgb(61, 66, 78);
   padding: 8px 15px;
 }
-.coll {
+.col {
   position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
 @media (min-width: 900px) {
-  .colla {
+  .profile-section {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
   }
-  .c {
+  .content-section {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%;

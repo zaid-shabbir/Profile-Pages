@@ -2,7 +2,7 @@
   <div class="container">
     <div class="user-info-container">
       <div class="row margin">
-        <div class="col responsive center">
+        <div class="col center">
           <div
             @click="show_modal"
             @mouseenter="hovered"
@@ -31,7 +31,7 @@
             </button>
           </div>
         </div>
-        <div class="col responsive user-name-container">
+        <div class="col user-name-container">
           <p class="user">
             User:
           </p>
@@ -42,7 +42,7 @@
       </div>
       <hr />
       <div class="row">
-        <div class="col responsive user-info-footer">
+        <div class="col user-info-footer">
           <p class="margin">
             <i class="fas fa-user info-icon"></i>
           </p>
@@ -51,7 +51,7 @@
             <span class="info-detail">{{ user_date_member }}</span>
           </p>
         </div>
-        <div class="col responsive user-info-footer">
+        <div class="col user-info-footer">
           <p class="margin">
             <i class="fas fa-globe info-icon"></i>
           </p>
@@ -60,7 +60,7 @@
             <span class="info-detail">{{ user_lang }}</span>
           </p>
         </div>
-        <div class="col responsive user-info-footer">
+        <div class="col user-info-footer">
           <p class="margin">
             <i class="fas fa-hand-holding-heart info-icon"></i>
           </p>
@@ -186,13 +186,6 @@ export default {
 }
 .margin {
   margin-top: 0.8rem !important;
-}
-@media (min-width: 900px) {
-  .responsive {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
 }
 .avatar {
   height: 150px;
