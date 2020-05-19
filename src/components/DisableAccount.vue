@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid mb-5">
-    <h5>Disable Account</h5>
+    <h2>Disable Account</h2>
     <div class="title">What is Lorem ipsum?</div>
     <ul class="list">
       <li>Lorem ipsum is simply dummy text of the printing and</li>
@@ -21,7 +21,7 @@
       cols="30"
       rows="2"
     ></textarea>
-    <button @click="validate" class="btn btn-danger disable-btn">
+    <button @click="validate" class="disable-btn">
       Disable Account
     </button>
   </div>
@@ -81,13 +81,17 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 50px;
   border-radius: 5px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 3rem !important;
 }
-h5 {
+h2 {
   font-weight: bold;
   margin-bottom: 30px;
   position: relative;
 }
-h5:after {
+h2:after {
   content: "";
   width: 40px;
   border-bottom: 2px solid rgb(61, 66, 78);
@@ -108,25 +112,40 @@ label {
 }
 input[type="text"],
 #more {
-  width: 95%;
+  width: 100%;
   padding: 8px;
   border-radius: 5px;
   border: none;
   border: lightgray 1px solid;
   outline: none;
+  margin-bottom: 10px;
 }
 .disable-btn {
   margin-top: 20px;
   padding: 8px 14px;
-  font-size: 15px;
   border-radius: 5px;
-  cursor: pointer;
   outline: none;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
 }
-.change-btn:hover {
-  color: lightblue;
-  background-color: lightgray;
-  color: darkblue;
+.disable-btn:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
 }
 .error {
   font-size: 14px;

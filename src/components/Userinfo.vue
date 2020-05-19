@@ -278,8 +278,8 @@ export default {
   border-color: #343a40;
 }
 .upload-btn:hover {
-    color: #fff;
-    background-color: #23272b;
-    border-color: #1d2124;
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
 }
 </style>

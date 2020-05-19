@@ -2,11 +2,11 @@
   <div id="app">
     <div class="containerr">
       <div class="roww">
-        <div class="colla b">
+        <div class="coll b">
           <div class="profile">Profile</div>
           <UserInfo />
         </div>
-        <div class="collb c">
+        <div class="coll c">
           <div id="nav">
             <router-link to="/">Account</router-link>
             <router-link to="/personalize">Personalize</router-link>

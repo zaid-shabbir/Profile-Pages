@@ -1,6 +1,6 @@
 <template>
   <div class="containerr">
-    <h5>Modification password</h5>
+    <h2>Modification password</h2>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
@@ -9,7 +9,7 @@
     <input id="new_password" v-model="new_password" type="text" />
     <label for="repeat_new_password">Repeat new password</label>
     <input id="repeat_new_password" v-model="repeat_new_password" type="text" />
-    <button @click="validate" class="btn btn-dark btn-block change-btn">
+    <button @click="validate" class="change-btn">
       Change the password
     </button>
   </div>
@@ -77,12 +77,12 @@ export default {
   margin-left: auto;
   margin-bottom: 3rem !important;
 }
-h5 {
+h2 {
   font-weight: bold;
   margin-bottom: 30px;
   position: relative;
 }
-h5:after {
+h2:after {
   content: "";
   width: 40px;
   border-bottom: 2px solid rgb(61, 66, 78);
@@ -96,26 +96,41 @@ label {
   font-size: 13px;
 }
 input[type="text"] {
-  width: 95%;
+  width: 100%;
   padding: 8px;
   border-radius: 5px;
   border: none;
   border: lightgray 1px solid;
   outline: none;
+  margin-bottom: 10px;
 }
 .change-btn {
-  width: 95%;
+  width: 100%;
   margin-top: 20px;
-  padding: 10px 0px;
-  font-size: 15px;
-  border-radius: 5px;
-  cursor: pointer;
   outline: none;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.475rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
 }
 .change-btn:hover {
-  color: lightblue;
-  background-color: lightgray;
-  color: darkblue;
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
 }
 .error {
   font-size: 14px;

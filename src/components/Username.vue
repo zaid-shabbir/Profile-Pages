@@ -1,6 +1,6 @@
 <template>
   <div class="containerr">
-    <h5>Your username</h5>
+    <h2>Your username</h2>
     <label for="username">Change your username</label>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
@@ -60,12 +60,12 @@ export default {
   margin-left: auto;
   margin-bottom: 3rem !important;
 }
-h5 {
+h2 {
   font-weight: bold;
   margin-bottom: 30px;
   position: relative;
 }
-h5:after {
+h2:after {
   content: "";
   width: 40px;
   border-bottom: 2px solid rgb(61, 66, 78);
@@ -85,6 +85,7 @@ input[type="text"] {
   border: none;
   border: lightgray 1px solid;
   outline: none;
+  margin-bottom: 10px;
 }
 .icon {
   margin-left: 10px;
