@@ -10,7 +10,7 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
-    <input v-model="current_password" id="current_password" type="text" />
+    <input v-model="current_password" id="current_password" type="password" />
     <label for="reason">Give a reason</label>
     <input v-model="reason" id="reason" type="text" />
     <label for="more">More explain</label>
@@ -111,6 +111,7 @@ label {
   margin-top: 10px;
 }
 input[type="text"],
+input[type="password"],
 #more {
   width: 100%;
   padding: 8px;
