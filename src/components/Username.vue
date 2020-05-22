@@ -4,7 +4,13 @@
     <label for="username">Change your username</label>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
-    <input id="username" v-model="user_name" type="text" />
+    <input
+      @keyup.enter="validate"
+      id="username"
+      v-model="user_name"
+      type="text"
+    />
+    <i v-if="submitted" class="fas fa-spinner fa-spin"></i>
     <i @click="validate" class="fas fa-thumbs-up icon"></i>
   </div>
 </template>
@@ -18,12 +24,14 @@ export default {
     return {
       user_name: "",
       success: "",
-      error: ""
+      error: "",
+      submitted: false
     };
   },
   methods: {
     validate() {
       this.error = "";
+      this.submitted = true;
       // axios({
       //   method: "put",
       //   url: "/url",
@@ -35,15 +43,18 @@ export default {
       //   .catch((this.error = "The username was not updated !"));
 
       // mocked function starts
-      if (this.user_name.length < 4) {
-        this.error = "The username " + this.user_name + " was not available !";
-      } else {
-        this.success = "The username was updated !";
-      }
+
       setTimeout(() => {
+        if (this.user_name.length < 4) {
+          this.error =
+            "The username " + this.user_name + " was not available !";
+        } else {
+          this.success = "The username was updated !";
+        }
         this.user_name = "";
         this.success = "";
-      }, 1000);
+        this.submitted = false;
+      }, 2000);
       // mocked function ends
     }
   }
@@ -88,7 +99,7 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 .icon {
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 15px;
   height: 28px;
   width: 25px;

@@ -4,16 +4,28 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
-    <input id="current_password" v-model="current_password" type="password" />
+    <input
+      @keyup.enter="validate"
+      id="current_password"
+      v-model="current_password"
+      type="password"
+    />
     <label for="new_password">New password</label>
-    <input id="new_password" v-model="new_password" type="password" />
+    <input
+      @keyup.enter="validate"
+      id="new_password"
+      v-model="new_password"
+      type="password"
+    />
     <label for="repeat_new_password">Repeat new password</label>
     <input
+      @keyup.enter="validate"
       id="repeat_new_password"
       v-model="repeat_new_password"
       type="password"
     />
-    <button @click="validate" class="change-btn">
+    <button @click="validate" type="submit" class="change-btn">
+      <i v-if="submitted" class="fas fa-spinner fa-spin"></i>
       Change the password
     </button>
   </div>
@@ -30,12 +42,14 @@ export default {
       new_password: "",
       repeat_new_password: "",
       success: "",
-      error: ""
+      error: "",
+      submitted: false
     };
   },
   methods: {
     validate() {
       this.error = "";
+      this.submitted = true;
       // var password = {};
       // password.current_password = this.current_password;
       // password.new_password = this.new_password;
@@ -51,20 +65,21 @@ export default {
       //   .catch((this.error = "The password was not updated !"));
 
       // mocked function starts
-      if (
-        this.current_password.length < 5 ||
-        this.new_password !== this.repeat_new_password
-      ) {
-        this.error = "The Password was not valid !";
-      } else {
-        this.success = "The Password was updated !";
-      }
       setTimeout(() => {
+        if (
+          this.current_password.length < 5 ||
+          this.new_password !== this.repeat_new_password
+        ) {
+          this.error = "The Password was not valid !";
+        } else {
+          this.success = "The Password was updated !";
+        }
         this.current_password = "";
         this.new_password = "";
         this.repeat_new_password = "";
         this.success = "";
-      }, 1000);
+        this.submitted = false;
+      }, 2000);
       // mocked function ends
     }
   }

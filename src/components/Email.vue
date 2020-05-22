@@ -4,9 +4,8 @@
     <label for="email">Edit Your Email</label>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
-    <input id="email" v-model="email" type="email" />
-    <i v-if="submitted" class="fas fa-spinner fa-spin spinner"></i>
-
+    <input @keyup.enter="validate" id="email" v-model="email" type="email" />
+    <i v-if="submitted" class="fas fa-spinner fa-spin"></i>
     <i @click="validate" class="fas fa-thumbs-up icon"></i>
   </div>
 </template>
