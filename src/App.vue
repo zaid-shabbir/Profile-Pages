@@ -67,14 +67,12 @@ export default {
   padding-top: 25px;
   height: 80px;
 }
-
 #nav a {
   margin-left: 20px;
   font-size: 18px;
   color: rgb(61, 66, 78);
   text-decoration: none;
 }
-
 #nav a.router-link-exact-active {
   font-weight: bold;
   border-bottom: 3px solid rgb(61, 66, 78);
