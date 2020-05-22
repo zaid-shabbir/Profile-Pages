@@ -4,11 +4,15 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
-    <input id="current_password" v-model="current_password" type="text" />
+    <input id="current_password" v-model="current_password" type="password" />
     <label for="new_password">New password</label>
-    <input id="new_password" v-model="new_password" type="text" />
+    <input id="new_password" v-model="new_password" type="password" />
     <label for="repeat_new_password">Repeat new password</label>
-    <input id="repeat_new_password" v-model="repeat_new_password" type="text" />
+    <input
+      id="repeat_new_password"
+      v-model="repeat_new_password"
+      type="password"
+    />
     <button @click="validate" class="change-btn">
       Change the password
     </button>
@@ -95,7 +99,7 @@ label {
   font-weight: 500;
   font-size: 13px;
 }
-input[type="text"] {
+input[type="password"] {
   width: 100%;
   padding: 8px;
   border-radius: 5px;

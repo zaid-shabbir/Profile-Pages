@@ -79,7 +79,7 @@ label {
   font-size: 13px;
 }
 input[type="text"] {
-  width: 93%;
+  width: 95%;
   padding: 8px;
   border-radius: 5px;
   border: none;
