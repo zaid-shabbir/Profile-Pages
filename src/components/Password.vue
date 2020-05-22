@@ -48,6 +48,7 @@ export default {
   },
   methods: {
     validate() {
+      this.success = "";
       this.error = "";
       this.submitted = true;
       // var password = {};
@@ -77,7 +78,6 @@ export default {
         this.current_password = "";
         this.new_password = "";
         this.repeat_new_password = "";
-        this.success = "";
         this.submitted = false;
       }, 2000);
       // mocked function ends

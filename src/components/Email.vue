@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     validate() {
+      this.success = "";
       this.error = "";
       this.submitted = true;
       // axios({
@@ -45,7 +46,6 @@ export default {
           this.success = "The Email was updated !";
         }
         this.email = "";
-        this.success = "";
         this.submitted = false;
       }, 2000);
       // mocked function ends

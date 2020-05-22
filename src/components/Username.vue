@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     validate() {
+      this.success = "";
       this.error = "";
       this.submitted = true;
       // axios({
@@ -52,7 +53,6 @@ export default {
           this.success = "The username was updated !";
         }
         this.user_name = "";
-        this.success = "";
         this.submitted = false;
       }, 2000);
       // mocked function ends

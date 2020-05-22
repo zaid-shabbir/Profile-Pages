@@ -10,11 +10,17 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <label for="current_password">Current password</label>
-    <input v-model="current_password" id="current_password" type="password" />
+    <input
+      @keyup.enter="validate"
+      v-model="current_password"
+      id="current_password"
+      type="password"
+    />
     <label for="reason">Give a reason</label>
-    <input v-model="reason" id="reason" type="text" />
+    <input @keyup.enter="validate" v-model="reason" id="reason" type="text" />
     <label for="more">More explain</label>
     <textarea
+      @keyup.enter="validate"
       v-model="more"
       name="more"
       id="more"
@@ -22,6 +28,7 @@
       rows="2"
     ></textarea>
     <button @click="validate" class="disable-btn">
+      <i v-if="submitted" class="fas fa-spinner fa-spin"></i>
       Disable Account
     </button>
   </div>
@@ -38,12 +45,15 @@ export default {
       reason: "",
       more: "",
       success: "",
-      error: ""
+      error: "",
+      submitted: false
     };
   },
   methods: {
     validate() {
+      this.success = "";
       this.error = "";
+      this.submitted = true;
       // var details = {};
       // details.current_password = this.current_password;
       // details.reason = this.reason;
@@ -59,17 +69,17 @@ export default {
       //   .catch((this.error = "The password was not updated !"));
 
       // mocked function starts
-      if (this.current_password.length < 5) {
-        this.error = "Account was not disabled !";
-      } else {
-        this.success = "Account was disabled successfully !";
-      }
       setTimeout(() => {
+        if (this.current_password.length < 5) {
+          this.error = "Account was not disabled !";
+        } else {
+          this.success = "Account was disabled successfully !";
+        }
         this.current_password = "";
         this.reason = "";
         this.more = "";
-        this.success = "";
-      }, 1000);
+        this.submitted = false;
+      }, 2000);
       // mocked function ends
     }
   }

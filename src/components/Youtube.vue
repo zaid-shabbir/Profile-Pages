@@ -6,7 +6,6 @@
       <i class="fab fa-youtube youtube-icon"></i>
       <span>Youtube</span>
     </div>
-
     <div class="text">
       <span>Synchronize your Youtube Account</span>
       <i @click="thumb" class="fas fa-thumbs-up thumb-icon"></i>
@@ -14,6 +13,7 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <button @click="start" class="btn btn-success btn-block start-btn">
+      <i v-if="submitted" class="fas fa-spinner fa-spin"></i>
       START
     </button>
     <hr />
@@ -29,7 +29,8 @@ export default {
     return {
       user_id: "",
       success: "",
-      error: ""
+      error: "",
+      submitted: false
     };
   },
   methods: {
@@ -37,7 +38,9 @@ export default {
       alert("You pressed me");
     },
     start() {
+      this.success = "";
       this.error = "";
+      this.submitted = true;
       // axios({
       //   method: "put",
       //   url: "/url",
@@ -49,11 +52,11 @@ export default {
       //   .catch((this.error = "Youtube account was not synced !"));
 
       // mocked function starts
-      alert("You started it!");
-      this.success = "Youtube account synced successfully !";
       setTimeout(() => {
-        this.success = "";
-      }, 1000);
+        alert("You started it!");
+        this.success = "Youtube account synced successfully !";
+        this.submitted = false;
+      }, 2000);
       // mocked function ends
     }
   }
