@@ -5,6 +5,8 @@
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="success" class="success">{{ success }}</div>
     <input id="email" v-model="email" type="email" />
+    <i v-if="submitted" class="fas fa-spinner fa-spin spinner"></i>
+
     <i @click="validate" class="fas fa-thumbs-up icon"></i>
   </div>
 </template>
@@ -18,12 +20,14 @@ export default {
     return {
       email: "",
       success: "",
-      error: ""
+      error: "",
+      submitted: false
     };
   },
   methods: {
     validate() {
       this.error = "";
+      this.submitted = true;
       // axios({
       //   method: "put",
       //   url: "/url",
@@ -35,15 +39,16 @@ export default {
       //   .catch((this.error = "The email was not updated !"));
 
       // mocked function starts
-      if (this.email.length < 5) {
-        this.error = "The Email was not valid !";
-      } else {
-        this.success = "The Email was updated !";
-      }
       setTimeout(() => {
+        if (this.email.length < 5) {
+          this.error = "The Email was not valid !";
+        } else {
+          this.success = "The Email was updated !";
+        }
         this.email = "";
         this.success = "";
-      }, 1000);
+        this.submitted = false;
+      }, 2000);
       // mocked function ends
     }
   }
@@ -88,7 +93,7 @@ input[type="email"] {
   margin-bottom: 10px;
 }
 .icon {
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 15px;
   height: 28px;
   width: 25px;
