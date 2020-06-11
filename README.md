@@ -1,4 +1,6 @@
-# user-info
+# user-info-app (Resposive with css)
+
+<img src="main.png" width="1200">
 
 ## Project setup
 ```
